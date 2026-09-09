@@ -1,0 +1,104 @@
+---
+import { Font } from "astro:assets";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--primary-font" preload />
+    <title>Zinix</title>
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    font-family: var(--primary-font);
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: opacity 0.2s ease;
+  }
+
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #fbf1c7;
+  }
+
+  .cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fbf1c7;
+  }
+
+  body:has(a:hover, button:hover) .cursor-dot,
+  body:has(a:hover, button:hover) .cursor-ring,
+  .cursor-dot.hidden,
+  .cursor-ring.hidden {
+    opacity: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+</style>
+
+<script is:inline lang="js">
+  const dot = document.querySelector(".cursor-dot");
+  const ring = document.querySelector(".cursor-ring");
+
+  let mouseX = 0;
+  let mouseY = 0;
+
+  let ringX = 0;
+  let ringY = 0;
+
+  const ease = 0.25;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+  });
+
+  function render() {
+    ringX += (mouseX - ringX) * ease;
+    ringY += (mouseY - ringY) * ease;
+
+    ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.closest("a, button")) {
+      dot.classList.add("hidden");
+      ring.classList.add("hidden");
+    } else {
+      dot.classList.remove("hidden");
+      ring.classList.remove("hidden");
+    }
+  });
+</script>
