@@ -1,57 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "../layout/BaseLayout.astro";
-import logo from "../assets/logo.svg";
 ---
 
 <BaseLayout>
-  <div class="home">
-    <Image src={logo} class="logo" alt="The Zinix Logo" />
-    <div>
-      <h1>Zinix</h1>
-      <p>
-        <a href="https://github.com/zinix-org/dragon-dns/">DragonDNS</a>
-        <span style="font-style: normal;"> | </span>
-        <a href="https://github.com/zinix-org/">GitHub</a>
-      </p>
-    </div>
-  </div>
+  <h1>Zinix</h1>
 </BaseLayout>
-
-<style>
-  .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-
-    height: 100vh;
-    width: 100vw;
-
-    background-color: #282828;
-    color: #fbf1c7;
-  }
-
-  .home h1 {
-    margin: 0;
-    margin-top: 0.1em;
-    font-size: 6em;
-    font-style: italic;
-  }
-
-  .home p {
-    margin-top: 0;
-    font-size: 1.75em;
-    color: #bdae93;
-  }
-
-  a {
-    color: inherit;
-  }
-
-  .logo {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-  }
-</style>
