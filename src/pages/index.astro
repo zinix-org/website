@@ -1,23 +1,30 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import logo from "../assets/logo.svg";
 ---
 
 <BaseLayout>
   <div class="home">
-    <Image src={logo} width="200" alt="The logo was supposed to be here..." />
-    <h1>Zinix</h1>
+    <h1>Better software starts with <br /> complete transparency</h1>
+    <p>
+      Open-source homelabber and developer tools without any telemetry or cloud
+      dependencies.
+    </p>
   </div>
 </BaseLayout>
 
 <style>
   .home {
     display: flex;
+    flex: 1;
+
     align-items: center;
     justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
 
-    flex: 1;
-    height: 100%;
+  p {
+    font-size: 1.4em;
+    margin: 0 16em;
   }
 </style>
