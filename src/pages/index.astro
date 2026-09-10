@@ -26,5 +26,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   p {
     font-size: 1.4em;
     margin: 0 16em;
+
+    @media (max-width: 1200px) {
+      margin: 0 1em;
+    }
+  }
+
+  h1 {
+    @media (max-width: 940) {
+      font-size: 2.5em;
+    }
+
+    @media (max-width: 560px) {
+      font-size: 2em;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 1.8em;
+    }
+
+    @media (max-width: 410px) {
+      font-size: 1.6em;
+    }
   }
 </style>

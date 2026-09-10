@@ -10,6 +10,7 @@ import logo from "../assets/logo.svg";
       <p>Zinix</p>
     </a>
   </div>
+
   <nav>
     <ul>
       <li>
@@ -33,6 +34,11 @@ import logo from "../assets/logo.svg";
 
     margin: 1em;
     padding: 0 16em;
+
+    @media (max-width: 768px) {
+      margin: 0.75em 1em;
+      padding: 0 1em;
+    }
   }
 
   .logo {
@@ -60,11 +66,22 @@ import logo from "../assets/logo.svg";
         color: $fg0;
       }
     }
+
+    @media (max-width: 768px) {
+      a p {
+        font-size: 1.5em;
+      }
+    }
   }
 
   .logo-image {
     height: 3em;
     width: 3em;
+
+    @media (max-width: 768px) {
+      height: 2.25em;
+      width: 2.25em;
+    }
   }
 
   nav {
