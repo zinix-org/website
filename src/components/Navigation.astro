@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.svg";
+---
+
+<header>
+  <div class="logo">
+    <a href="/">
+      <Image src={logo} alt="Zinix Logo" class="logo-image" />
+      <p>Zinix</p>
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  $fg0: #fbf1c7;
+  $fg1: #d5c4a1;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 1em;
+    padding: 0 5em;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.375em;
+
+      text-decoration: none;
+      color: $fg1;
+
+      p {
+        font-size: 2em;
+        margin: 0;
+
+        color: $fg1;
+        transition: linear 0.1s;
+      }
+
+      P:hover {
+        color: $fg0;
+      }
+    }
+  }
+
+  .logo-image {
+    height: 3em;
+    width: 3em;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+
+    ul {
+      display: flex;
+
+      gap: 1em;
+
+      list-style-type: none;
+
+      li {
+        a {
+          color: $fg1;
+          text-decoration: none;
+          font-size: 1.125em;
+
+          transition: linear 0.1s;
+        }
+
+        a:hover {
+          color: $fg0;
+        }
+      }
+    }
+  }
+</style>

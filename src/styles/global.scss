@@ -1,0 +1,32 @@
+$font-serif: var(--font-primary-serif);
+
+$bg: #282828;
+$fg0: #fbf1c7;
+$fg1: #d5c4a1;
+
+body {
+  background-color: $bg;
+  color: $fg0;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: $font-serif;
+  font-size: 8.75rem;
+}

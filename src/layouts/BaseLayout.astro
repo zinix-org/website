@@ -1,5 +1,7 @@
 ---
 import { Font } from "astro:assets";
+import "../styles/global.scss";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
@@ -8,10 +10,13 @@ import { Font } from "astro:assets";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <Font cssVariable="--primary-font" preload />
-    <title>Zinix</title>
+    <Font cssVariable="--font-primary-serif" preload />
+    <title>Zinix: A Transparent Internet</title>
   </head>
   <body>
-    <slot />
+    <Navigation />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

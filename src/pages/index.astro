@@ -1,7 +1,23 @@
 ---
-import BaseLayout from "../layout/BaseLayout.astro";
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import logo from "../assets/logo.svg";
 ---
 
 <BaseLayout>
-  <h1>Zinix</h1>
+  <div class="home">
+    <Image src={logo} width="200" alt="The logo was supposed to be here..." />
+    <h1>Zinix</h1>
+  </div>
 </BaseLayout>
+
+<style>
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+    height: 100%;
+  }
+</style>

@@ -5,8 +5,8 @@ import { defineConfig, fontProviders } from "astro/config";
 export default defineConfig({
   fonts: [
     {
-      name: "Instrument Serif",
-      cssVariable: "--primary-font",
+      name: "IBM Plex Serif",
+      cssVariable: "--font-primary-serif",
       provider: fontProviders.google(),
     },
   ],
